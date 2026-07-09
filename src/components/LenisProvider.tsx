@@ -17,13 +17,13 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 1.4,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.8, // Increased for a more luxurious, cinematic scroll
+      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out for a long, ultra-smooth deceleration tail
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.95, // Softened slightly to prevent scroll jumps
+      touchMultiplier: 1.2,
     });
 
     setLenisInstance(lenis);

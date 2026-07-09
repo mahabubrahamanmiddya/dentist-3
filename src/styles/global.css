@@ -76,18 +76,31 @@ html, body {
 }
 
 /* Lenis Smooth Scroll Core Styles */
-html.lenis, html.lenis body {
-  height: auto;
+html.lenis,
+html.lenis-scrolling {
+  scroll-behavior: auto !important;
 }
+
+html.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html.lenis-smooth body {
+  overflow: anchor;
+}
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
 .lenis.lenis-smooth [data-lenis-prevent] {
   overflow: clip;
 }
+
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
