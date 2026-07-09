@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #ece0d1;      /* Primary Background */
+  --color-bg-chocolate: #dbc1ac; /* Secondary Background */
+  --color-bg-brown: #dbc1ac;     /* Secondary Background */
+  --color-bg-glass: rgba(220, 193, 172, 0.45);
+
+  --color-accent-orange: #967259;    /* Primary Accent */
+  --color-accent-copper: #967259;    /* Primary Accent */
+  --color-accent-bronze: #634832;    /* Dark Brown */
+  --color-accent-gold: #634832;      /* Dark Brown */
+  --color-accent-cream: #38220f;     /* Text / CTA */
+  --color-accent-creamMuted: #634832;/* Muted Dark Brown */
+  --color-accent-glow: rgba(150, 114, 89, 0.08);
+
+  --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-playfair), 'Playfair Display', serif;
+  --font-buttons: var(--font-poppins), 'Poppins', sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  --shadow-orange-glow: 0 20px 40px rgba(99, 72, 50, 0.08);
+  --shadow-orange-glow-sm: 0 10px 20px rgba(99, 72, 50, 0.04);
+  --shadow-glass-border: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Custom global overrides */
+html, body {
+  background-color: #ece0d1; /* Primary Background */
+  color: #38220f; /* Text / CTA */
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: auto !important; /* Managed by Lenis */
+}
+
+/* Glassmorphism custom styling utilities */
+.glass-panel {
+  background: rgba(220, 193, 172, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 72, 50, 0.08);
+}
+
+.glass-panel-glow:hover {
+  border-color: rgba(150, 114, 89, 0.35);
+  box-shadow: 0 15px 30px rgba(99, 72, 50, 0.06);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ece0d1;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbc1ac; /* Secondary Background */
+  border-radius: 9999px;
+  border: 2px solid #ece0d1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #967259; /* Primary Accent */
+}
+
+/* Selection colors */
+::selection {
+  background-color: #967259;
+  color: #ece0d1;
+}
+
+/* Lenis Smooth Scroll Core Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Slider CSS override to hide default scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide default cursor on desktops */
+@media (pointer: fine) {
+  body, a, button, [role="button"], input, textarea, select {
+    cursor: none !important;
+  }
+}
