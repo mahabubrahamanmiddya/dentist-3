@@ -1,6 +1,11 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({
+  ignoreMobileResize: true
+});
+
 // Setup heading characters reveal with opacity, blur and slight y translation stagger
 export const setupHeadingReveal = (headingEl: HTMLElement | null) => {
   if (!headingEl) return;
@@ -134,7 +139,7 @@ export const setupScrollAnimations = (
         trigger: sectionEl,
         start: 'top top',
         end: '+=1500',
-        scrub: 1,
+        scrub: 0.3,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true

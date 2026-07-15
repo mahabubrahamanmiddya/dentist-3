@@ -46,9 +46,9 @@ export default function TestimonialSection() {
       className="relative h-screen bg-[#ece0d1] overflow-hidden select-none border-b border-[#967259]/10 flex flex-col justify-between items-center py-8 md:py-12"
     >
       {/* Background cursor spotlight glow circle */}
-      <div className="spotlight-glow absolute w-[300px] h-[300px] rounded-full bg-[#dbc1ac]/40 blur-[80px] pointer-events-none opacity-0 md:opacity-100" />
-      <div className="absolute top-[20%] left-[-5%] w-96 h-96 bg-[#dbc1ac]/30 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-5%] w-96 h-96 bg-[#967259]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="spotlight-glow absolute w-[300px] h-[300px] rounded-full bg-[#dbc1ac]/40 blur-[80px] pointer-events-none hidden md:block opacity-0 md:opacity-100" />
+      <div className="hidden md:block absolute top-[20%] left-[-5%] w-96 h-96 bg-[#dbc1ac]/30 rounded-full blur-[100px] pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[20%] right-[-5%] w-96 h-96 bg-[#967259]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col items-center flex-grow justify-between h-full">
         {/* Animated Heading */}
@@ -76,7 +76,7 @@ export default function TestimonialSection() {
               <div 
                 key={item.id}
                 ref={(el) => { if (el) cardsRef.current[idx] = el; }}
-                className="testimonial-card absolute w-full max-w-[540px] rounded-[32px] p-6 md:p-8 backdrop-blur-xl border border-white/20 bg-[#dbc1ac]/25 shadow-orange-glow flex flex-col justify-between"
+                className="testimonial-card absolute w-full max-w-[540px] rounded-[32px] p-6 md:p-8 bg-[#ebdcd0] border border-[#967259]/15 md:bg-[#dbc1ac]/25 md:backdrop-blur-xl md:border-white/20 shadow-orange-glow flex flex-col justify-between will-change-transform"
                 style={{ 
                   transformStyle: 'preserve-3d', 
                   backfaceVisibility: 'hidden',
