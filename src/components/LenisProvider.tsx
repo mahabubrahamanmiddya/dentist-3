@@ -17,15 +17,15 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 1.5, // Slightly faster response time for better responsiveness
+      duration: 1.8, // Increased for a more luxurious, cinematic scroll
       easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic ease-out
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.95, // Softened slightly to prevent scroll jumps
-      touchMultiplier: 1.5, // Make touch scrolling feel responsive
+      touchMultiplier: 0.8, // Reduced touch sensitivity to prevent fast scrolling
       syncTouch: true, // Enables smooth scrolling synchronization on touch/mobile devices
-      syncTouchLerp: 0.08, // Premium deceleration tail for mobile scrolling
+      syncTouchLerp: 0.05, // Lowered value for a much softer, gentler deceleration tail
     });
 
     setLenisInstance(lenis);
