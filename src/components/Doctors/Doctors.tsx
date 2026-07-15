@@ -131,6 +131,7 @@ export default function Doctors() {
         {/* Swiper Slider */}
         <div className="mt-12 md:mt-16 relative" data-cursor="DRAG">
           <Swiper
+            data-lenis-prevent
             modules={[Navigation, Pagination]}
             spaceBetween={30}
             slidesPerView={1}

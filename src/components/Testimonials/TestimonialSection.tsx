@@ -144,6 +144,7 @@ export default function TestimonialSection() {
         {/* Mobile Swiper Container */}
         <div className="block md:hidden w-full max-w-[540px] px-2 my-auto">
           <Swiper
+            data-lenis-prevent
             modules={[Pagination, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
