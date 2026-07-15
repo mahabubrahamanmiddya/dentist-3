@@ -120,3 +120,23 @@ html.lenis-smooth body {
     cursor: none !important;
   }
 }
+
+/* Custom Swiper Pagination Bullets */
+.swiper-custom-pagination .swiper-pagination-bullet,
+.testimonials-custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #967259 !important;
+  opacity: 0.35 !important;
+  border-radius: 9999px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  margin: 0 4px !important;
+}
+
+.swiper-custom-pagination .swiper-pagination-bullet-active,
+.testimonials-custom-pagination .swiper-pagination-bullet-active {
+  width: 22px;
+  opacity: 1 !important;
+  border-radius: 4px;
+}
